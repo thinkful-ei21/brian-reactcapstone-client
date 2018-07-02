@@ -11,11 +11,12 @@ import { connect } from 'react-redux';
     render() {
         const cheeses = this.props.cheeses.map((cheese,index) => 
         ( <li key={index}> {cheese} </li> ))
-   
+        
     return (
         <div >
             <ul > {cheeses}
             </ul>
+
         </div>
     )
 
