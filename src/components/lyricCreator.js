@@ -1,17 +1,14 @@
 import React from 'react';
 import Input from './input';
 import {reduxForm, Field} from 'redux-form'
+import {postLyrics} from '../actions/lyrics'
+import LyricCreatorOutput from './lyricCreatorOutput'
 
 class LyricCreator extends React.Component{
+   
     onSubmit(values){
-        console.log(values);
-        return fetch('http://localhost:8080/api/created',{
-            method: 'POST',
-            body: JSON.stringify(values),
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-            
-        })
-        .then(res => console.log(res.json()))
+        this.props.dispatch(postLyrics(values));
+        
     }
 
 
@@ -23,16 +20,16 @@ class LyricCreator extends React.Component{
             <div className="creatorBoard" >
                 
              <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>   
-              <label htmlFor="name">title</label>
+              <label htmlFor="title">title</label>
               <Field name="title" id="title" type="text" component={Input}/>
               <button type="submit"
               disabled={this.props.pristine || this.props.submitting}>submit title</button>     
-              <label htmlFor="name">lyrics</label>
+              <label htmlFor="lyrics">lyrics</label>
               <Field name="lyrics" id="lyrics" type="text" component='input'/>
              </form>    
-
-             <ul> 
-             </ul>
+                <ul>
+                    <LyricCreatorOutput/>
+                </ul>   
             </div>
 
         )
