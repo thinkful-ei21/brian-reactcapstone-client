@@ -3,7 +3,7 @@ import Input from './input';
 import {reduxForm, Field} from 'redux-form'
 import {postLyrics} from '../actions/lyrics'
 import LyricCreatorOutput from './lyricCreatorOutput'
-
+import './lyricCreator.css'
 class LyricCreator extends React.Component{
    
     onSubmit(values){
@@ -27,7 +27,7 @@ class LyricCreator extends React.Component{
               <label htmlFor="lyrics">lyrics</label>
               <Field name="lyrics" id="lyrics" type="text" component='input'/>
              </form>    
-                <ul>
+                <ul className="lists">
                     <LyricCreatorOutput/>
                 </ul>   
             </div>

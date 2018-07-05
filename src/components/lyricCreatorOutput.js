@@ -1,6 +1,7 @@
 import React from 'react';
 import {fetchLyrics} from '../actions/lyrics'
 import {connect} from 'react-redux';
+
 class LyricCreatorOutput extends React.Component {
    
     componentDidMount(){
@@ -9,10 +10,10 @@ class LyricCreatorOutput extends React.Component {
    
     render(){
         const outputs = this.props.outputs.map((output,index) => 
-        ( <li key={index}> {output.title}</li> ))
+        ( <li className="list-wrapper" key={index}> {output.title}</li> ))
     
     return (
-        <div className="form-input">
+        <div className="form-output">
              {outputs}
             
         </div>
