@@ -1,0 +1,12 @@
+.form-output{
+    background: rgb(222, 224, 219);
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 4px;   
+   
+}
+
+li{
+    max-width: 200px;
+    word-wrap:break-word;
+}

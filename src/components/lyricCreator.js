@@ -4,6 +4,7 @@ import {reduxForm, Field} from 'redux-form'
 import {postLyrics} from '../actions/lyrics'
 import LyricCreatorOutput from './lyricCreatorOutput'
 import './lyricCreator.css'
+import './lyricCreatorOutput.css'
 class LyricCreator extends React.Component{
    
     onSubmit(values){
@@ -19,13 +20,13 @@ class LyricCreator extends React.Component{
         return(
             <div className="creatorBoard" >
                 <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>   
-                    <label htmlFor="title">title</label>
+                    <label htmlFor="title">Title</label>
                     <Field name="title" id="title" type="text" component={Input}/>
                         
-                    <label htmlFor="lyrics">lyrics</label>
+                    <label htmlFor="lyrics">Lyrics</label>
                     <Field name="lyrics" id="lyrics" type="text" component={Input}/>
                     <button type="submit"
-                    disabled={this.props.pristine || this.props.submitting}>submit title</button> 
+                    disabled={this.props.pristine || this.props.submitting}>Submit song</button> 
                 </form>    
                 <ul className="lists">
                     <LyricCreatorOutput/>
