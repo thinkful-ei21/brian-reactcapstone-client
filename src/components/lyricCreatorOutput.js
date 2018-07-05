@@ -10,7 +10,7 @@ class LyricCreatorOutput extends React.Component {
    
     render(){
         const outputs = this.props.outputs.map((output,index) => 
-        ( <li className="list-wrapper" key={index}> {output.title}</li> ))
+        ( <li className="list-wrapper" key={index}> {output.title} {output.lyrics}</li> ))
     
     return (
         <div className="form-output">
