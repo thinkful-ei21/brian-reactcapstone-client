@@ -1,15 +1,10 @@
 import React from 'react';
-import Input from './input';
 import {reduxForm, Field} from 'redux-form'
-import {postLyrics} from '../actions/lyrics'
-import LyricCreatorOutput from './lyricCreatorOutput'
-import Card from './card.js'
-import './lyricCreator.css'
-import './lyricCreatorOutput.css'
-class LyricCreator extends React.Component{
+
+class SearchForm extends React.Component{
    
     onSubmit(values){
-        this.props.dispatch(postLyrics(values));
+        this.props.dispatch(fetchSearch(values));
         
     }
 
@@ -19,7 +14,7 @@ class LyricCreator extends React.Component{
 
 
         return(
-            <div className="creatorBoard" >
+            <div className="search-form" >
                 <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>   
                     <label htmlFor="title">Title</label>
                     <Field name="title" id="title" type="text" component={Input}/>
@@ -29,8 +24,8 @@ class LyricCreator extends React.Component{
                     <button type="submit"
                     disabled={this.props.pristine || this.props.submitting}>Submit song</button> 
                 </form>    
-                <ul className="lists">
-                    <LyricCreatorOutput/>
+                <ul className="searchResults">
+                   
                 </ul>   
                 
             </div>
@@ -39,5 +34,5 @@ class LyricCreator extends React.Component{
 }
 
 export default reduxForm({
-    form: 'creator'
+    form: 'search'
 })(LyricCreator)

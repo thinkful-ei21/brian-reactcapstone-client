@@ -1,9 +1,9 @@
-.form-output{
-    background: rgb(222, 224, 219);
+.list-wrapper{
+    background: rgb(232, 233, 236);
     margin-bottom: 8px;
     padding: 8px;
     border-radius: 4px;   
-   
+    width: 200px;
 }
 
 li{
