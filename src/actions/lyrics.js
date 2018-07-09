@@ -48,7 +48,8 @@ export const postLyrics = (values) => dispatch => {
         return res.json();
     }).then(data => {
         dispatch(postLyricsSuccess(data));
-    }).catch(error => {
+    })
+    .catch(error => {
         dispatch(postLyricsError(error));
     });
 };
@@ -60,6 +61,7 @@ export const fetchLyrics = () => dispatch => {
          }
          return res.json();
      }).then(data => {
+         console.log(data)
          dispatch(fetchLyricsSuccess(data));
      }).catch(error => {
          console.log(error);

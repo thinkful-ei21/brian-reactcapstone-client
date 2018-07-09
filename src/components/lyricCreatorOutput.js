@@ -8,7 +8,7 @@ class LyricCreatorOutput extends React.Component {
         this.props.dispatch(fetchLyrics())
     }
    
-    render(){
+    render(){console.log(this.props.outputs);
         const outputs = this.props.outputs.map((output,index) => 
         (<div key={index} className="list-wrapper"> <li> {output.title} </li> 
         <li>  {output.lyrics}</li> 

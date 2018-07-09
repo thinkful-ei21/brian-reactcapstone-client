@@ -16,17 +16,18 @@ const initialState = {
 };
 
 export const reducer = (state=initialState, action) => {
-    console.log(state, action);
+    console.log(state, action)
     if (action.type === FETCH_LYRICS_REQUEST){
         return Object.assign({}, state, {
             fetchloading: true, 
             fetcherror: null
         })
     } if (action.type === FETCH_LYRICS_SUCCESS){
+        console.log(state, action)
         return Object.assign({}, state, {
             fetchloading: false,
             fetcherror: null,
-            lyrics: action.lyric
+            lyrics: action.lyric.lyrics
         })
     } if (action.type === FETCH_LYRICS_ERROR){
         return Object.assign({}, state, {
@@ -40,10 +41,12 @@ export const reducer = (state=initialState, action) => {
             posterror: null
         })
     } if (action.type === POST_LYRICS_SUCCESS){
+        console.log(action);
         return Object.assign({}, state, {
+            
             postloading: false,
             posterror: null,
-            lyrics: action.lyrics
+            lyrics:  [...state.lyrics, action.lyrics]
                 
         })
     } if (action.type === POST_LYRICS_ERROR){
