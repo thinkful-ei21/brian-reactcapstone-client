@@ -6,18 +6,14 @@ import LyricCreatorOutput from './lyricCreatorOutput'
 import Card from './card.js'
 import './lyricCreator.css'
 import './lyricCreatorOutput.css'
+import SearchForm from './search-form'
 class LyricCreator extends React.Component{
    
     onSubmit(values){
-        this.props.dispatch(postLyrics(values));
-        
+        this.props.dispatch(postLyrics(values));  
     }
 
-
-    
     render(){
-
-
         return(
             <div className="creatorBoard" >
                 <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>   
@@ -32,7 +28,7 @@ class LyricCreator extends React.Component{
                 <ul className="lists">
                     <LyricCreatorOutput/>
                 </ul>   
-                
+                <SearchForm/>
             </div>
         )
     }

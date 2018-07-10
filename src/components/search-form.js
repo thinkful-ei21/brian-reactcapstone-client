@@ -1,12 +1,12 @@
 import React from 'react';
 import {reduxForm, Field} from 'redux-form'
-
+import Input from './input';
 class SearchForm extends React.Component{
    
-    onSubmit(values){
-        this.props.dispatch(fetchSearch(values));
+    // onSubmit(values){
+    //     this.props.dispatch(fetchSearch(values));
         
-    }
+    // }
 
 
     
@@ -18,9 +18,6 @@ class SearchForm extends React.Component{
                 <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>   
                     <label htmlFor="title">Title</label>
                     <Field name="title" id="title" type="text" component={Input}/>
-                        
-                    <label htmlFor="lyrics">Lyrics</label>
-                    <Field name="lyrics" id="lyrics" type="text" component={Input}/>
                     <button type="submit"
                     disabled={this.props.pristine || this.props.submitting}>Submit song</button> 
                 </form>    
@@ -35,4 +32,4 @@ class SearchForm extends React.Component{
 
 export default reduxForm({
     form: 'search'
-})(LyricCreator)
+})(SearchForm)

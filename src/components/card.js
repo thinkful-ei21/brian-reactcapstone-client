@@ -1,12 +1,33 @@
 import React from 'react';
-import LyricCreatorOutput from './lyricCreatorOutput'
+import {connect} from 'react-redux';
+
 import './card.css';
 
-export default function Card(props) {
+class SearchCard extends React.Component {
+   
+    // componentDidMount(){
+    //     this.props.dispatch(fetchLyrics())
+    // }
+   
+    render(){console.log(this.props.outputs);
+        const results = this.props.outputs.map((results,index) => 
+        (<div key={index} className="searchlist-wrapper"> <li> {results.title} </li> 
+        <li>  {results.lyrics}</li> 
+        <button>open </button></div>
+        ));
+    
     return (
-        <div className="card">
-            <LyricCreatorOutput/> 
-            
+        <div className="search-outputs">
+             {results}
         </div>
-    );
-};
+    )
+}
+}
+const mapStateToProps = function(state){
+    return {
+        outputs: state.createdlyrics.lyrics
+    }
+}
+
+
+export default connect(mapStateToProps)(SearchCard)

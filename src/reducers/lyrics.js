@@ -60,28 +60,3 @@ export const reducer = (state=initialState, action) => {
     return state;
 };
 
-///////i copied and pasted the above reducer
-// export const postreducer = (state=initialState, action) => {
-//     console.log(state, action);
-//     if (action.type === POST_LYRICS_REQUEST){
-//         return Object.assign({}, state, {
-//             loading: true, 
-//             error: null
-//         })
-//     } if (action.type === POST_LYRICS_SUCCESS){
-//         return Object.assign({}, state, {
-//             loading: false,
-//             error: null,
-//             lyrics: [...state.lyric,
-//                 action.lyric]
-//         })
-//     } if (action.type === POST_LYRICS_ERROR){
-//         return Object.assign({}, state, {
-//             loading: false,
-//             error: action.error,
-            
-//         })
-//     } 
-    
-//     return state;
-// };
