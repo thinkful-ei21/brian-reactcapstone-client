@@ -4,7 +4,10 @@ import {
       FETCH_LYRICS_ERROR,
       POST_LYRICS_REQUEST,
       POST_LYRICS_SUCCESS, 
-      POST_LYRICS_ERROR
+      POST_LYRICS_ERROR,
+      DELETE_LYRICS_REQUEST,
+      DELETE_LYRICS_SUCCESS,
+      DELETE_LYRICS_ERROR
     } from '../actions/lyrics'
 
 const initialState = {
@@ -50,6 +53,27 @@ export const reducer = (state=initialState, action) => {
                 
         })
     } if (action.type === POST_LYRICS_ERROR){
+        return Object.assign({}, state, {
+            postloading: false,
+            posterror: action.error,
+            
+        })
+    } ////////////////delete
+    if (action.type === DELETE_LYRICS_REQUEST){
+        return Object.assign({}, state, {
+            postloading: true, 
+            posterror: null
+        })
+    } if (action.type === DELETE_LYRICS_SUCCESS){
+        console.log(action);
+        return Object.assign({}, state, {
+            
+            postloading: false,
+            posterror: null,
+            lyrics:  state.lyrics.filter(words => words.id !== action.lyric.id )
+                
+        })
+    } if (action.type === DELETE_LYRICS_ERROR){
         return Object.assign({}, state, {
             postloading: false,
             posterror: action.error,

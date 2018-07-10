@@ -31,6 +31,25 @@ export const postLyricsError = error => ({
     type: POST_LYRICS_ERROR,
     error
 });
+////////DELETE LYRICS
+export const DELETE_LYRICS_REQUEST = 'DELETE_LYRICS_REQUEST';
+export const deleteLyricsRequest = () => ({
+    type: DELETE_LYRICS_REQUEST
+});
+
+export const DELETE_LYRICS_SUCCESS = 'DELETE_LYRICS_SUCCESS';
+export const deleteLyricsSuccess = id => ({
+    type: DELETE_LYRICS_SUCCESS,
+    lyric:{id}
+});
+
+export const DELETE_LYRICS_ERROR = 'DELETE_LYRICS_ERROR';
+export const deleteLyricsError = error => ({
+    type: DELETE_LYRICS_ERROR,
+    error
+});
+
+
 ///post and fetchLyrics
 const BASE_URL = 'http://localhost:8080/api/created';
 
@@ -68,3 +87,24 @@ export const fetchLyrics = () => dispatch => {
          dispatch(fetchLyricsError(error));
      });
  };
+
+ export const deleteLyrics = (id) => dispatch => {
+    dispatch(deleteLyricsRequest());
+    return fetch(`${BASE_URL}/${id}`, {
+        method: 'DELETE',
+        headers: { 'Accept': 'application/json' },
+    }
+    ).then(res => {
+        if(!res.ok){
+            return Promise.reject(res.statusText)
+        }
+       return res
+    })
+    .then(res => {
+        
+        dispatch(deleteLyricsSuccess(id));
+    }).catch(error => {
+        console.log(error);
+        dispatch(deleteLyricsError(error));
+    });
+}
