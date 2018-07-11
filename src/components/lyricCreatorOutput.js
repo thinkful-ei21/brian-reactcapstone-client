@@ -4,28 +4,31 @@ import {deleteLyrics} from '../actions/lyrics'
 import {connect} from 'react-redux';
 
 class LyricCreatorOutput extends React.Component {
-   
+
     componentDidMount(){
         this.props.dispatch(fetchLyrics())
     }
-   
+
     deleteCard(id){
         return this.props.dispatch(deleteLyrics(id))
     }
 
 
     render(){console.log(this.props.outputs);
-        const outputs = this.props.outputs.map((output,index) => 
-        (<div key={index} className="list-wrapper"> <li> {output.title} </li> 
-        <li>  {output.lyrics}</li> 
-        <button onClick={()=>this.deleteCard(output.id)}>cancel </button></div>
+        const outputs = this.props.outputs.map((output,index) =>
+        (
+          <li key={index}>
+            <h2>{output.title}</h2>
+            <p>{output.lyrics}</p>
+            <button onClick={()=>this.deleteCard(output.id)}>Delete</button>
+            <button>Comment</button>
+          </li>
         ));
-    
+
     return (
-        <div className="form-output">
+        <ul className="songs-list">
              {outputs}
-             
-        </div>
+        </ul>
     )
 }
 }

@@ -1,16 +1,14 @@
 .creatorBoard {
-    background-color: rgb(153, 147, 149);
-    width: 235px;
+    /* background-color: rgb(153, 147, 149); */
+}
+
+.y-wrap {
+  margin: 0 auto;
+  width: 90%;
 }
 
 .lists {
-    background: rgb(179, 25, 71);
+    /* background: rgb(179, 25, 71); */
     margin-bottom: 8px;
     padding: 8px;
-    border-radius: 4px;
-    border: 20px;
-    border-block-end-color: black; 
-    width: 205px;
-    
 }
-

@@ -1,12 +1,36 @@
-.list-wrapper{
+.songs-list li {
     background: rgb(232, 233, 236);
+    border: 1px solid transparent;
+    border-radius: 4px;
     margin-bottom: 8px;
     padding: 8px;
-    border-radius: 4px;   
-    width: 200px;
 }
 
-li{
-    max-width: 200px;
-    word-wrap:break-word;
+.songs-list {
+  list-style: none;
+  padding: 0;
+}
+
+.songs-list h2 {
+  margin: 0;
+}
+
+.songs-list p {
+  line-height: 22px;
+  margin: 6px 0 12px;
+}
+
+.songs-list button {
+  background: navy;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 12px;
+  outline: none;
+  padding: 4px 12px;
+  transition: all 400ms ease-in-out;
+}
+
+.songs-list button:hover {
+  background: crimson;
 }
