@@ -1,4 +1,4 @@
-
+import BASE_URL from '../config'
 /////////FETCHING LYRICS OR COMMENTS
 export const FETCH_LYRICS_REQUEST = 'FETCH_LYRICS_REQUEST';
 export const fetchLyricsRequest = () => ({
@@ -86,7 +86,7 @@ export const deleteLyricsError = error => ({
 
 
 ///post, delete and fetchLyrics
-const BASE_URL = 'http://localhost:8080/api/created';
+//const BASE_URL = 'http://localhost:8080/api/created';
 
 export const postLyrics = (values) => dispatch => {
    dispatch(postLyricsRequest());
@@ -143,11 +143,11 @@ export const fetchLyrics = () => dispatch => {
         dispatch(deleteLyricsError(error));
     });
 }
-const BASE_URLs = 'http://localhost:8080/api/created';
+//const BASE_URLs = 'http://localhost:8080/api/created';
 //_______________COMMENTS_________________
 export const postComments = (values,id) => dispatch => {
     dispatch(postCommentsRequest());
-    return fetch(`${BASE_URLs}/${id}/comments`, {
+    return fetch(`${BASE_URL}/${id}/comments`, {
      method: 'POST',
      body: JSON.stringify(values),
      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
@@ -166,7 +166,7 @@ export const postComments = (values,id) => dispatch => {
  };
  export const fetchComments = (id) => dispatch => {
      dispatch(fetchCommentsRequest());
-     return fetch(`${BASE_URLs}/${id}/comments`).then(res => {
+     return fetch(`${BASE_URL}/${id}/comments`).then(res => {
           if (!res.ok){
               return Promise.reject(res.statusText)
           }
