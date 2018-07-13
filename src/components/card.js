@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 
 import './card.css';
 
-class SearchCard extends React.Component {
-   
+class Cardlist extends React.Component {
+   //this is cards
     // componentDidMount(){
     //     this.props.dispatch(fetchLyrics())
     // }

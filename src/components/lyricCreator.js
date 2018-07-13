@@ -3,38 +3,32 @@ import Input from './input';
 import {reduxForm, Field} from 'redux-form';
 import {postLyrics} from '../actions/lyrics'
 import LyricCreatorOutput from './lyricCreatorOutput'
-import Card from './card.js'
+import Onboard from './onBoard'
+import SubmissionBoard from './submissionForm'
 import './lyricCreator.css'
 import './lyricCreatorOutput.css'
-import SearchForm from './search-form'
-class LyricCreator extends React.Component{
+//import SearchForm from './search-form'
+export default class LyricCreator extends React.Component{
 
-    onSubmit(values){
-        this.props.dispatch(postLyrics(values));
-    }
+    
 
     render(){
         return(
             <div className="creatorBoard">
+                <Onboard/>
               <div className="y-wrap">
-                <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-                    <label htmlFor="title">Title</label>
-                    <Field name="title" id="title" type="text" component={Input}/>
-
-                    <label htmlFor="lyrics">Lyrics</label>
-                    <Field name="lyrics" id="lyrics" type="text" component={Input}/>
-                    <button type="submit"
-                    disabled={this.props.pristine || this.props.submitting}>Submit song</button>
-                </form>
+               <SubmissionBoard/>
+                
                 <ul className="lists">
+                <a id="link here"></a>
                     <LyricCreatorOutput/>
+                    
                 </ul>
+                
               </div>
             </div>
         )
     }
 }
 
-export default reduxForm({
-    form: 'creator'
-})(LyricCreator)
+

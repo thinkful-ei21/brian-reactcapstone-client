@@ -1,5 +1,6 @@
 .creatorBoard {
     /* background-color: rgb(153, 147, 149); */
+    margin-top: 0;
 }
 
 .y-wrap {
@@ -12,3 +13,19 @@
     margin-bottom: 8px;
     padding: 8px;
 }
+
+.onboarding{
+    width: 100%;
+    background-color: rgb(56, 231, 193); 
+    margin: 0px;
+    height: 100%;
+
+}
+
+.lyricbanner{
+    margin: 0px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+

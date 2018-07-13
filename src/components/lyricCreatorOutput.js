@@ -17,7 +17,7 @@ class LyricCreatorOutput extends React.Component {
     render(){console.log(this.props.outputs);
         const outputs = this.props.outputs.map((output,index) =>
         (
-          <li key={index}>
+          <li key={index} contentEditable="true">
             <h2>{output.title}</h2>
             <p>{output.lyrics}</p>
             <button onClick={()=>this.deleteCard(output.id)}>Delete</button>
