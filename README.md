@@ -10,4 +10,4 @@
 #### Now is your turn to create lyrics and have the world comment on them. 
 
 ### Type your lyrics into the 2 boxes named title and lyrics.
-##Your lyrics are always open to be commented by a open highlighted comment system. 
+## Your lyrics are always open to be commented by a open highlighted comment system. 
