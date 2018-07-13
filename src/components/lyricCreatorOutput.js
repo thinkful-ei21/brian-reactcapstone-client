@@ -2,7 +2,8 @@ import React from 'react';
 import {fetchLyrics} from '../actions/lyrics'
 import {deleteLyrics} from '../actions/lyrics'
 import {connect} from 'react-redux';
-
+import Cardlist from './commentCard';
+import CommentForm from './commentForm' 
 class LyricCreatorOutput extends React.Component {
 
     componentDidMount(){
@@ -10,24 +11,28 @@ class LyricCreatorOutput extends React.Component {
     }
 
     deleteCard(id){
-        return this.props.dispatch(deleteLyrics(id))
+        return this.props.dispatch(deleteLyrics(id));
     }
 
+    
 
     render(){console.log(this.props.outputs);
         const outputs = this.props.outputs.map((output,index) =>
         (
-          <li key={index} contentEditable="true">
+          <li key={output.id} contentEditable="true">
             <h2>{output.title}</h2>
             <p>{output.lyrics}</p>
             <button onClick={()=>this.deleteCard(output.id)}>Delete</button>
-            <button>Comment</button>
+            
+            <CommentForm lyricsID={output.id}/>
+            <Cardlist lyricsID={output.id}/>
           </li>
         ));
 
     return (
         <ul className="songs-list">
              {outputs}
+                
         </ul>
     )
 }
