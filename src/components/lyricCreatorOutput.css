@@ -34,3 +34,7 @@
 .songs-list button:hover {
   background: crimson;
 }
+
+p:hover {
+  background: rgba(0,0,0,0.3);
+}

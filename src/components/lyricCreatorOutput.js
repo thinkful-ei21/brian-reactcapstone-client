@@ -14,14 +14,21 @@ class LyricCreatorOutput extends React.Component {
         return this.props.dispatch(deleteLyrics(id));
     }
 
-    
+    ///TODO: -> LYRIC 22-24
+    //TODO: ->lyric = lyriccreator output
+    ///TODO: <P> FOR EACH LINE (also capture each index)
+    //TODO: do onclick for each line
 
     render(){console.log(this.props.outputs);
         const outputs = this.props.outputs.map((output,index) =>
         (
           <li key={output.id} contentEditable="true">
             <h2>{output.title}</h2>
-            <p>{output.lyrics}</p>
+            {
+                output.lyrics.split(`\n`)
+                   .map(x => x.trim())
+                   .map((x,i) => <p key={i}>{i}-{x }</p>)
+            }
             <button onClick={()=>this.deleteCard(output.id)}>Delete</button>
             
             <CommentForm lyricsID={output.id}/>
