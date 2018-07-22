@@ -4,7 +4,7 @@ import {reduxForm, Field} from 'redux-form';
 import {postLyrics} from '../actions/lyrics';
 //const {textarea} = React.DOM;
 
- class SubmissionBoard extends React.Component{
+ class SubmissionForm extends React.Component{
 
     onSubmit(values){
         this.props.dispatch(postLyrics(values));
@@ -31,4 +31,4 @@ import {postLyrics} from '../actions/lyrics';
 }
 export default reduxForm({
     form: 'creator'
-})(SubmissionBoard)
+})(SubmissionForm)

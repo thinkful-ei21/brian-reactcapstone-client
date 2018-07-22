@@ -2,8 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {fetchComments} from '../actions/lyrics'
 import './card.css';
-
-class Cardlist extends React.Component {
+////cardlist was replaced by commentcard
+class CommentCard extends React.Component {
    //this is cards
     // componentDidMount(){
     //     this.props.dispatch(fetchLyrics())
@@ -36,4 +36,4 @@ const mapStateToProps = function(state,props){
 }
 
 
-export default connect(mapStateToProps)(Cardlist)
+export default connect(mapStateToProps)(CommentCard)

@@ -4,7 +4,7 @@ import {reduxForm, Field} from 'redux-form';
 import {postLyrics} from '../actions/lyrics'
 import LyricCreatorOutput from './lyricCreatorOutput'
 import Onboard from './onBoard'
-import SubmissionBoard from './submissionForm'
+import SubmissionForm from './submissionForm'
 import './lyricCreator.css'
 import './lyricCreatorOutput.css'
 //import SearchForm from './search-form'
@@ -17,7 +17,7 @@ export default class LyricCreator extends React.Component{
             <div className="creatorBoard">
                 <Onboard/>
               <div className="y-wrap">
-               <SubmissionBoard/>
+               <SubmissionForm/>
                 
                 <ul className="lists">
                 <a id="link here"></a>

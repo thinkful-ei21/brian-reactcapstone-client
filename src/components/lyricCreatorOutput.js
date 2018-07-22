@@ -2,8 +2,9 @@ import React from 'react';
 import {fetchLyrics} from '../actions/lyrics'
 import {deleteLyrics} from '../actions/lyrics'
 import {connect} from 'react-redux';
-import Cardlist from './commentCard';
+import CommentCard from './commentCard';
 import CommentForm from './commentForm' 
+import Lyric from './lyric';
 class LyricCreatorOutput extends React.Component {
 
     componentDidMount(){
@@ -14,6 +15,7 @@ class LyricCreatorOutput extends React.Component {
         return this.props.dispatch(deleteLyrics(id));
     }
 
+    
     ///TODO: -> LYRIC 22-24
     //TODO: ->lyric = lyriccreator output
     ///TODO: <P> FOR EACH LINE (also capture each index)
@@ -24,17 +26,14 @@ class LyricCreatorOutput extends React.Component {
         (
           <li key={output.id} contentEditable="true">
             <h2>{output.title}</h2>
-            {
-                output.lyrics.split(`\n`)
-                   .map(x => x.trim())
-                   .map((x,i) => <p key={i}>{i}-{x }</p>)
-            }
+           
+            <Lyric {...output} onClick/>
             <button onClick={()=>this.deleteCard(output.id)}>Delete</button>
             
             <CommentForm lyricsID={output.id}/>
-            <Cardlist lyricsID={output.id}/>
+            <CommentCard lyricsID={output.id}/>
           </li>
-        ));
+        )); console.log(outputs);
 
     return (
         <ul className="songs-list">
