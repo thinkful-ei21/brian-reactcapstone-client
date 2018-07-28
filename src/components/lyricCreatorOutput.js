@@ -5,17 +5,21 @@ import {connect} from 'react-redux';
 import CommentCard from './commentCard';
 import CommentForm from './commentForm' 
 import Lyric from './lyric';
+//import requiresLogin from './requires-login';
+import {fetchProtectedData} from '../actions/protected-data';
+
 class LyricCreatorOutput extends React.Component {
 
     componentDidMount(){
         this.props.dispatch(fetchLyrics())
+        this.props.dispatch(fetchProtectedData());
     }
 
     deleteCard(id){
         return this.props.dispatch(deleteLyrics(id));
     }
 
-    
+
     ///TODO: -> LYRIC 22-24
     //TODO: ->lyric = lyriccreator output
     ///TODO: <P> FOR EACH LINE (also capture each index)
@@ -25,6 +29,7 @@ class LyricCreatorOutput extends React.Component {
         const outputs = this.props.outputs.map((output,index) =>
         (
           <li key={output.id} contentEditable="true">
+            <h3>Username: {this.props.username}</h3>
             <h2>{output.title}</h2>
            
             <Lyric {...output} onClick/>
@@ -44,7 +49,9 @@ class LyricCreatorOutput extends React.Component {
 }
 }
 const mapStateToProps = function(state){
+    const {currentUser} = state.auth;
     return {
+        username: state.auth.currentUser.username,
         outputs: state.createdlyrics.lyrics
     }
 }

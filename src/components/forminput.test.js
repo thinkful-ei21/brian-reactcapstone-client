@@ -1,14 +1,14 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 
-import Input from './input.js'
+import FormInput from './forminput.js'
 
-describe ('<Input/>', () => {
+describe ('<FormInput/>', () => {
     it('renders the', () =>{
-        shallow(<Input/>);
+        shallow(<FormInput/>);
     });
     it('has class name form-input', () => {
-        const wrapper = shallow(<Input/>);
+        const wrapper = shallow(<FormInput/>);
         expect(wrapper.hasClass("form-input")).toEqual(true);
     })
 

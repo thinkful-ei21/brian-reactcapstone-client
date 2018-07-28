@@ -1,6 +1,6 @@
 import React from 'react';
 import {reduxForm, Field} from 'redux-form'
-import Input from './input';
+import FormInput from './forminput';
 import {postComments} from '../actions/lyrics';
 import {fetchComments} from '../actions/lyrics';
 class CommentForm extends React.Component{
@@ -37,9 +37,9 @@ class CommentForm extends React.Component{
                 <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>   
                
                     <label htmlFor="highlight">What lyric do you want to comment on?</label>
-                    <Field name="highlight" id="highlight" type="text" component={Input}/>
+                    <Field name="highlight" id="highlight" type="text" component={FormInput}/>
                     <label htmlFor="remark">Comment</label>
-                    <Field name="remark" id="remark" type="text" component={Input}/>
+                    <Field name="remark" id="remark" type="text" component={FormInput}/>
                     <button type="submit"
                     disabled={this.props.pristine || this.props.submitting}>Submit pretentious comments</button> 
                     <button onClick={() => this.setEditing(false)}>hide</button>

@@ -1,0 +1,15 @@
+.onBoardDescription{
+    width: 100%;
+    background-color: rgb(56, 231, 193); 
+    margin: auto;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+
+.lyricbanner{
+    margin: 0px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}

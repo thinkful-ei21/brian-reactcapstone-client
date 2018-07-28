@@ -1,3 +1,6 @@
+/////////THIS REDUCER IS CURRENTLY NOT BEING USED PLEASE IGNORE
+
+
 export const FETCH_SEARCH_REQUEST = 'FETCH_SEARCH_REQUEST';
 export const fetchSearchRequest = () => ({
     type: FETCH_SEARCH_REQUEST

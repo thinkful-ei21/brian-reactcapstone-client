@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchComments} from '../actions/lyrics'
-import './card.css';
+//import './card.css';
 ////cardlist was replaced by commentcard
 class CommentCard extends React.Component {
    //this is cards
