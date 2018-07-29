@@ -90,11 +90,11 @@ export const deleteLyricsError = error => ({
 
 export const postLyrics = (values) => dispatch => {
    dispatch(postLyricsRequest());
-   return fetch(`${BASE_URL}`, {
+   return fetch(`${BASE_URL}/created`, {
     method: 'POST',
     body: JSON.stringify(values),
     headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-    
+
    }).then(res => {
         if (!res.ok){
             return Promise.reject(res.statusText)
@@ -109,7 +109,7 @@ export const postLyrics = (values) => dispatch => {
 };
 export const fetchLyrics = () => dispatch => {
     dispatch(fetchLyricsRequest());
-    return fetch(`${BASE_URL}`).then(res => {
+    return fetch(`${BASE_URL}/created`).then(res => {
          if (!res.ok){
              return Promise.reject(res.statusText)
          }
@@ -136,7 +136,7 @@ export const fetchLyrics = () => dispatch => {
        return res
     })
     .then(res => {
-        
+
         dispatch(deleteLyricsSuccess(id));
     }).catch(error => {
         console.log(error);
@@ -151,7 +151,7 @@ export const postComments = (values,id) => dispatch => {
      method: 'POST',
      body: JSON.stringify(values),
      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-     
+
     }).then(res => {
          if (!res.ok){
              return Promise.reject(res.statusText)
@@ -179,4 +179,3 @@ export const postComments = (values,id) => dispatch => {
           dispatch(fetchCommentsError(error));
       });
   };
-
