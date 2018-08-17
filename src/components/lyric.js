@@ -10,10 +10,12 @@ export default class Lyric extends React.Component {
             {
                 this.props.lyrics.split(`\n`)
                    .map(x => x.trim())
-                   .map((x,i) => <p key={i}>{i}-{x }</p>)
+                   .map((x,i) => <p key={i} onClick={() => this.props.onClick({
+                     id:i, text: x
+                   })}>{i}-{x }</p>)
             }
-        </div> 
-        
+        </div>
+
 
         return(
             <div>

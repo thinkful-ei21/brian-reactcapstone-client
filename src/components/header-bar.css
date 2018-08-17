@@ -1,0 +1,14 @@
+.header-bar{
+  background-color: #fd5c63;
+  width: 100%;
+  height: 30px;
+  margin: 0;
+
+}
+
+h1{
+  margin: 0;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}

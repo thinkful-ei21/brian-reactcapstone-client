@@ -3,13 +3,19 @@ import {fetchLyrics} from '../actions/lyrics'
 import {deleteLyrics} from '../actions/lyrics'
 import {connect} from 'react-redux';
 import CommentCard from './commentCard';
-import CommentForm from './commentForm' 
+import CommentForm from './commentForm'
 import Lyric from './lyric';
 //import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 
 class LyricCreatorOutput extends React.Component {
 
+  constructor(props){
+    super(props)
+    this.state = {
+      showform: false
+    }
+  }
     componentDidMount(){
         this.props.dispatch(fetchLyrics())
         this.props.dispatch(fetchProtectedData());
@@ -25,17 +31,21 @@ class LyricCreatorOutput extends React.Component {
     ///TODO: <P> FOR EACH LINE (also capture each index)
     //TODO: do onclick for each line
 
+
+
+///todo make makeacomment() function, test it with console.console.log();
+//
     render(){console.log(this.props.outputs);
         const outputs = this.props.outputs.map((output,index) =>
         (
           <li key={output.id} contentEditable="true">
             <h3>Username: {this.props.username}</h3>
             <h2>{output.title}</h2>
-           
-            <Lyric {...output} onClick/>
+
+            <Lyric {...output} onClick={(lyric) => this.makeComment(lyric)}/>
             <button onClick={()=>this.deleteCard(output.id)}>Delete</button>
-            
-            <CommentForm lyricsID={output.id}/>
+            { this.state.showform ?  <CommentForm lyricsID={output.id} lyricLine={this.state.selectedLyricLine}/> : null}
+
             <CommentCard lyricsID={output.id}/>
           </li>
         )); console.log(outputs);
@@ -43,7 +53,7 @@ class LyricCreatorOutput extends React.Component {
     return (
         <ul className="songs-list">
              {outputs}
-                
+
         </ul>
     )
 }

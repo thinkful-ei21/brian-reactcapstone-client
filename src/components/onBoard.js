@@ -3,21 +3,27 @@ import './onBoard.css'
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 import LoginForm from './login-form';
-
+import logo from './noteonboard.png'
 export class Onboard extends React.Component{
+
+
+
     render(){
         // <LoginForm />
-        //     <Link to="/register">Register</Link>
+        //     <Link to="/register">Register</Link
+        if (this.props.loggedIn) {
+               return <Redirect to="/dashboard" />;
+           }
+
         return(
         <div className="onboarding">
             <div className="onBoardDescription">
-            <h1 className="lyricbanner">LYRIC CREATOR</h1>
-            
-            <p>This is a Lyric creator app.</p>
+
+              <hr></hr>
                 <div className="onBoardLogin">
                     <h2>Already a songwriter? Login!</h2>
                     <LoginForm />
-                    <Link to="/register">Register</Link>
+                    <Link to="/register" className="register">Register</Link>
                 </div>
             <h2>What does this app do?</h2>
          <ul>
@@ -29,16 +35,15 @@ export class Onboard extends React.Component{
             <h2> This application was designed in order to help anyone jot down lyrics for a song and share them with the world, and open them for commentary. Normally it is difficult to send
                  songs to Genius and allow them to feature your lyrics for the world to see. But now anyone is capable of doing this. </h2>
             </div>
-            
+
         </div>
-        
+
         )
     }
-            
+
 }
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
 
 export default connect(mapStateToProps)(Onboard);
-

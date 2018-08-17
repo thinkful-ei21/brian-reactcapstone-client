@@ -1,6 +1,6 @@
 .onBoardDescription{
     width: 100%;
-    background-color: rgb(56, 231, 193); 
+    background-color: #fd5c63;
     margin: auto;
     height: 100%;
     text-align: center;
@@ -12,4 +12,28 @@
     margin: auto;
     width: 50%;
     text-align: center;
+}
+
+ul{
+  list-style-type: none;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+hr{
+  border-top: 3px double black;
+  margin: 20px;
+  color: white;
+}
+
+.register{
+  margin: 5px;
+  color: white;
+  width: auto;
+  border: 4px;
+}
+
+h2{
+  color: white;
+  text-shadow: 1px 1px 1px black;
 }
