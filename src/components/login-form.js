@@ -3,7 +3,7 @@ import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
-
+import './login-form.css';
 export class LoginForm extends React.Component {
     onSubmit(values) {
         return this.props.dispatch(login(values.username, values.password));
@@ -24,6 +24,7 @@ export class LoginForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
+                <div className="innerform">
                 {error}
                 <label htmlFor="username">Username</label>
                 <Field
@@ -31,6 +32,8 @@ export class LoginForm extends React.Component {
                     type="text"
                     name="username"
                     id="username"
+                    size="10"
+                    placeholder="username"
                     validate={[required, nonEmpty]}
                 />
                 <label htmlFor="password">Password</label>
@@ -41,14 +44,15 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <button className="button" disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
+                </div>
             </form>
         );
     }
 }
-///this will run default 
+///this will run default
 export default reduxForm({
     form: 'login',
     onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))

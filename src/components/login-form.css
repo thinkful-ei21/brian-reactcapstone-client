@@ -1,0 +1,29 @@
+.login-form{
+
+  width: 100%;
+
+  align-content: center;
+  margin: auto;
+vertical-align: middle;
+}
+
+#username{
+
+  height: 40px;
+  width: 200px;
+  font-size: 20px;
+}
+
+#password{
+  
+  height: 40px;
+  width: 200px;
+  font-size: 20px;
+}
+
+.button{
+
+}
+.innerform{
+  vertical-align: middle;
+}

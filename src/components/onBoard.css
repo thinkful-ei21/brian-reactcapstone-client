@@ -36,4 +36,28 @@ hr{
 h2{
   color: white;
   text-shadow: 1px 1px 1px black;
+  margin: 0px;
+}
+
+.login{
+  background: url(noteonboard.png);
+
+}
+
+body{
+  background-color: #fd5c63;
+  text-align: center;
+}
+
+.return-login{
+  margin: 5px;
+  color: white;
+  width: auto;
+  border: 4px;
+}
+
+.registersubmit{
+  padding: 4px;
+  
+  color: white;
 }
