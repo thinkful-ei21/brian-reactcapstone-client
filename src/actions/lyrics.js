@@ -115,7 +115,7 @@ export const fetchLyrics = () => dispatch => {
          }
          return res.json();
      }).then(data => {
-         console.log(data)
+
          dispatch(fetchLyricsSuccess(data));
      }).catch(error => {
          console.log(error);
@@ -125,7 +125,7 @@ export const fetchLyrics = () => dispatch => {
 
  export const deleteLyrics = (id) => dispatch => {
     dispatch(deleteLyricsRequest());
-    return fetch(`${BASE_URL}/${id}`, {
+    return fetch(`${BASE_URL}/created/${id}`, {
         method: 'DELETE',
         headers: { 'Accept': 'application/json' },
     }
@@ -147,7 +147,7 @@ export const fetchLyrics = () => dispatch => {
 //_______________COMMENTS_________________
 export const postComments = (values,id) => dispatch => {
     dispatch(postCommentsRequest());
-    return fetch(`${BASE_URL}/${id}/comments`, {
+    return fetch(`${BASE_URL}/created/${id}/comments`, {
      method: 'POST',
      body: JSON.stringify(values),
      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
@@ -158,7 +158,9 @@ export const postComments = (values,id) => dispatch => {
          }
          return res.json();
      }).then(data => {
-         dispatch(postCommentsSuccess(data));
+       console.log(data);
+         dispatch(fetchComments(id));
+
      })
      .catch(error => {
          dispatch(postCommentsError(error));
@@ -166,13 +168,13 @@ export const postComments = (values,id) => dispatch => {
  };
  export const fetchComments = (id) => dispatch => {
      dispatch(fetchCommentsRequest());
-     return fetch(`${BASE_URL}/${id}/comments`).then(res => {
+     return fetch(`${BASE_URL}/created/${id}/comments`).then(res => {
           if (!res.ok){
               return Promise.reject(res.statusText)
           }
           return res.json();
       }).then(data => {
-          console.log(data)
+
           dispatch(fetchCommentsSuccess(data, id));
       }).catch(error => {
           console.log(error);

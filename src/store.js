@@ -17,7 +17,8 @@ const store = createStore(
         createdcomments: lyricReducer,
         auth: authReducer,
         protectedData: protectedDataReducer
-    }), applyMiddleware(thunk)
+    }),window.REDUX_DEVTOOLS_EXTENSION && window.REDUX_DEVTOOLS_EXTENSION(),
+     applyMiddleware(thunk)
 );
 
 // Hydrate the authToken from localStorage if it exist

@@ -30,7 +30,13 @@ class LyricCreatorOutput extends React.Component {
     //TODO: ->lyric = lyriccreator output
     ///TODO: <P> FOR EACH LINE (also capture each index)
     //TODO: do onclick for each line
-
+    ///line 51 is unfinished ?
+    makeComment(lyric){
+      //console.log(lyric);
+      this.setState({
+        showform: true
+      })
+    }
 
 
 ///todo make makeacomment() function, test it with console.console.log();
@@ -38,17 +44,18 @@ class LyricCreatorOutput extends React.Component {
     render(){console.log(this.props.outputs);
         const outputs = this.props.outputs.map((output,index) =>
         (
-          <li key={output.id} contentEditable="true">
+          <li key={output.id} >
             <h3>Username: {this.props.username}</h3>
             <h2>{output.title}</h2>
 
             <Lyric {...output} onClick={(lyric) => this.makeComment(lyric)}/>
             <button onClick={()=>this.deleteCard(output.id)}>Delete</button>
+
             { this.state.showform ?  <CommentForm lyricsID={output.id} lyricLine={this.state.selectedLyricLine}/> : null}
 
             <CommentCard lyricsID={output.id}/>
           </li>
-        )); console.log(outputs);
+        ));
 
     return (
         <ul className="songs-list">
