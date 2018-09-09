@@ -10,12 +10,10 @@ class CommentCard extends React.Component {
     // }
     componentDidMount(){
         this.props.dispatch(fetchComments(this.props.lyricsID))
-        
+
     }
 
-    commentCheck(){
-console.log(this.props.results)
-    }
+    
 
     render(){
         // if(true){
@@ -32,7 +30,7 @@ console.log(this.props.results)
 
     return (
         <div className="search-outputs">
-        <button onClick={() => this.commentCheck()}>check state</button>
+
         <ul>
 
              {results}

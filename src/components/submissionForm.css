@@ -1,0 +1,26 @@
+.title{
+  margin: 0;
+
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+.lyrics{
+  margin: 0;
+
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+.title-input{
+  text-align: center;
+  padding: 10px;
+}
+
+.lyrics-input{
+  padding: 10px;
+}
+
+.submit-lyric-form{
+  width: 250px;
+  margin: 0 auto;
+}
