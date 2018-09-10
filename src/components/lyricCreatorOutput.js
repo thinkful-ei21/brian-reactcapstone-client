@@ -45,7 +45,7 @@ class LyricCreatorOutput extends React.Component {
         const outputs = this.props.outputs.map((output,index) =>
         (
           <li key={output.id} >
-            <h3>Username: {this.props.username}</h3>
+            
             <h2>{output.title}</h2>
 
             <Lyric {...output} onClick={(lyric) => this.makeComment(lyric)}/>
