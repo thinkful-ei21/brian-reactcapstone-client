@@ -45,7 +45,7 @@ class LyricCreatorOutput extends React.Component {
         const outputs = this.props.outputs.map((output,index) =>
         (
           <li key={output.id} >
-            
+
             <h2>{output.title}</h2>
 
             <Lyric {...output} onClick={(lyric) => this.makeComment(lyric)}/>
@@ -67,6 +67,7 @@ class LyricCreatorOutput extends React.Component {
 }
 const mapStateToProps = function(state){
     const {currentUser} = state.auth;
+    console.log(state);
     return {
         username: state.auth.currentUser.username,
         outputs: state.createdlyrics.lyrics

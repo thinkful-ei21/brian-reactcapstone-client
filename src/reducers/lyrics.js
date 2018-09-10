@@ -33,7 +33,7 @@ export const reducer = (state=initialState, action) => {
             fetcherror: null
         })
     } if (action.type === FETCH_LYRICS_SUCCESS){
-
+      console.log(action);
         return Object.assign({}, state, {
             fetchloading: false,
             fetcherror: null,
@@ -51,7 +51,7 @@ export const reducer = (state=initialState, action) => {
             fetcherror: null
         })
     } if (action.type === FETCH_COMMENTS_SUCCESS){
-        
+
         return Object.assign({}, state, {
             fetchloading: false,
             fetcherror: null,
