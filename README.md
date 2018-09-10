@@ -4,6 +4,7 @@
 
 ##### https://briancapstoneclient.herokuapp.com/
 
+![alt text](https://github.com/thinkful-ei21/brian-reactcapstone-client/tree/cards/img1.png)
 
 ##### This application was designed in order to help anyone jot down lyrics for a song and share them with the world, and open them for commentary. Normally it is difficult to send songs to Genius and allow them to feature your lyrics for the world to see. But now anyone is capable of doing this.
 
