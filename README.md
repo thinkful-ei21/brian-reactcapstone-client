@@ -4,7 +4,7 @@
 
 ##### https://briancapstoneclient.herokuapp.com/
 
-![alt text](https://github.com/thinkful-ei21/brian-reactcapstone-client/tree/cards/img1.png)
+![alt text](https://github.com/thinkful-ei21/brian-reactcapstone-client/tree/cards/img1.png "image 1")
 
 ##### This application was designed in order to help anyone jot down lyrics for a song and share them with the world, and open them for commentary. Normally it is difficult to send songs to Genius and allow them to feature your lyrics for the world to see. But now anyone is capable of doing this.
 
@@ -13,3 +13,8 @@
 ### Type your lyrics into the 2 boxes named title and lyrics.
 ## Your lyrics are always open to be commented by a open highlighted comment system.
 just click on a lyric to get started commenting
+
+###Stack
+- react.js, redux.js
+- node.js, express.js
+- mongoDB, mongoose.js
