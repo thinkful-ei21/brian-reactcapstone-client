@@ -2,6 +2,11 @@
 
 #### By Brian Dixon
 
+#### Demonstration account:
+username: devaccount
+password: password1234
+
+
 ##### Live app: https://briancapstoneclient.herokuapp.com/
 ##### server repo: https://github.com/thinkful-ei21/brian-reactcapstone-server
 
