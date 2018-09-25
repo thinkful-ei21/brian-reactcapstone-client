@@ -1,14 +1,29 @@
-.songs-list li {
-    background: rgb(232, 233, 236);
-    border: 1px solid transparent;
+.list-item {
+    background-color: #3977AD;
+
+    border: 5px solid black;
     border-radius: 4px;
-    margin-bottom: 8px;
-    padding: 8px;
+    margin-bottom: 10px;
+    border: 50px;
+    padding: 5px;
+    width: 75%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+
 }
 
+.commentscard{
+  padding-right: 30px;
+}
+.songs-list li{
+  border: 10px;
+}
 .songs-list {
   list-style: none;
   padding: 0;
+  text-align: center;
 }
 
 .songs-list h2 {

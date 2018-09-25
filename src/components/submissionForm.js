@@ -21,7 +21,7 @@ import './submissionForm.css'
 
             <label htmlFor="lyrics" className="lyrics">Lyrics</label>
 
-            <Field name="lyrics" className="lyrics-input" id="lyrics" type="text" rows="5" cols="50" component='textarea' className='form-input'/>
+            <Field name="lyrics" className="lyrics-input" id="lyrics" type="text" rows="5" cols="40" component='textarea' className='form-input'/>
 
             <button type="submit" className="button"
             disabled={this.props.pristine || this.props.submitting}>Submit song</button>

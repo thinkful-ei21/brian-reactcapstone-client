@@ -44,7 +44,7 @@ class LyricCreatorOutput extends React.Component {
     render(){console.log(this.props.outputs);
         const outputs = this.props.outputs.map((output,index) =>
         (
-          <li key={output.id} >
+          <li className="list-item"key={output.id} >
 
             <h2>{output.title}</h2>
 
@@ -53,7 +53,7 @@ class LyricCreatorOutput extends React.Component {
 
             { this.state.showform ?  <CommentForm lyricsID={output.id} lyricLine={this.state.selectedLyricLine}/> : null}
 
-            <CommentCard lyricsID={output.id}/>
+            <CommentCard className="commentscard" lyricsID={output.id}/>
           </li>
         ));
 

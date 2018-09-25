@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchComments} from '../actions/lyrics'
+import './commentCard.css';
 //import './card.css';
 ////cardlist was replaced by commentcard
 class CommentCard extends React.Component {
@@ -13,7 +14,7 @@ class CommentCard extends React.Component {
 
     }
 
-    
+
 
     render(){
         // if(true){
