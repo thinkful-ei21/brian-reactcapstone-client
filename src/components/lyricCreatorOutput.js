@@ -26,11 +26,7 @@ class LyricCreatorOutput extends React.Component {
     }
 
 
-    ///TODO: -> LYRIC 22-24
-    //TODO: ->lyric = lyriccreator output
-    ///TODO: <P> FOR EACH LINE (also capture each index)
-    //TODO: do onclick for each line
-    ///line 51 is unfinished ?
+
     makeComment(lyric){
       //console.log(lyric);
       this.setState({
