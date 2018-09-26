@@ -6,7 +6,10 @@
     text-align: center;
     float: left;
 }
-
+p{
+  color:white;
+  text-shadow: 1px 1px 1px black;
+}
 .lyricbanner{
     margin: 0px;
     margin: auto;
@@ -58,6 +61,6 @@ body{
 
 .registersubmit{
   padding: 4px;
-  
+
   color: white;
 }

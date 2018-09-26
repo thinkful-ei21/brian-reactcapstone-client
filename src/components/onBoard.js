@@ -25,6 +25,7 @@ export class Onboard extends React.Component{
                     <LoginForm />
                     <Link to="/register" className="register">Register</Link>
                 </div>
+                <p>demo account, username: devaccount <br/>password: password1234</p>
             <h2>What does this app do?</h2>
          <ul>
             <li>Maybe you are curious about making a song and need a small place to jot down some ideas quickly. </li>
@@ -35,7 +36,7 @@ export class Onboard extends React.Component{
             <h2> A personal Genius app for yourself and friends.  </h2>
             <h2> This application was designed in order to help anyone jot down lyrics for a song and share them with the world, and open them for commentary. Normally it is difficult to send
                  songs to Genius and allow them to feature your lyrics for the world to see. But now anyone is capable of doing this. </h2>
-                 <h2>demo account, username: devaccount <br/>password: password1234</h2>
+                 
             </div>
 
         </div>
